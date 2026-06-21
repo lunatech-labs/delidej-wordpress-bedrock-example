@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wpml-config>
+    <!-- Custom Post Types -->
+    <custom-types>
+        <custom-type translate="1">wphash_ntf_bar</custom-type>
+        <custom-type translate="1">wphash_announcement</custom-type>
+        <custom-type translate="1">wphash_popup</custom-type>
+    </custom-types>
+
+    <!-- Admin Texts (Plugin Settings) -->
+    <admin-texts>
+        <key name="hashbar_wpnbp_opt"></key>
+    </admin-texts>
+
+    <!-- Announcement Bar Custom Fields -->
+    <custom-fields>
+        <!-- Announcement Bar - Content & Messaging -->
+        <custom-field action="translate">_wphash_ab_messages</custom-field>
+
+        <!-- Announcement Bar - CTA Button -->
+        <custom-field action="copy">_wphash_ab_cta_enabled</custom-field>
+
+        <!-- Announcement Bar - Countdown -->
+        <custom-field action="translate">_wphash_ab_countdown_label_days</custom-field>
+        <custom-field action="translate">_wphash_ab_countdown_label_hours</custom-field>
+        <custom-field action="translate">_wphash_ab_countdown_label_minutes</custom-field>
+        <custom-field action="translate">_wphash_ab_countdown_label_seconds</custom-field>
+        <custom-field action="translate">_wphash_ab_countdown_expired_message</custom-field>
+        <custom-field action="copy">_wphash_ab_countdown_enabled</custom-field>
+        <custom-field action="copy">_wphash_ab_countdown_type</custom-field>
+        <custom-field action="copy">_wphash_ab_countdown_end_date</custom-field>
+        <custom-field action="copy">_wphash_ab_countdown_style</custom-field>
+
+        <!-- Announcement Bar - Coupon -->
+        <custom-field action="translate">_wphash_ab_coupon_code</custom-field>
+        <custom-field action="translate">_wphash_ab_coupon_label</custom-field>
+        <custom-field action="translate">_wphash_ab_coupon_description</custom-field>
+        <custom-field action="translate">_wphash_ab_coupon_copy_text</custom-field>
+        <custom-field action="translate">_wphash_ab_coupon_copied_text</custom-field>
+        <custom-field action="copy">_wphash_ab_coupon_enabled</custom-field>
+
+        <!-- Announcement Bar - Design (copy only) -->
+        <custom-field action="copy">_wphash_ab_bg_color</custom-field>
+        <custom-field action="copy">_wphash_ab_text_color</custom-field>
+        <custom-field action="copy">_wphash_ab_bg_type</custom-field>
+        <custom-field action="copy">_wphash_ab_gradient_direction</custom-field>
+        <custom-field action="copy">_wphash_ab_gradient_color</custom-field>
+        <custom-field action="copy">_wphash_ab_bg_image</custom-field>
+        <custom-field action="copy">_wphash_ab_font_family</custom-field>
+        <custom-field action="copy">_wphash_ab_font_size</custom-field>
+        <custom-field action="copy">_wphash_ab_font_weight</custom-field>
+        <custom-field action="copy">_wphash_ab_height</custom-field>
+        <custom-field action="copy">_wphash_ab_padding</custom-field>
+
+        <!-- Announcement Bar - Position & Display -->
+        <custom-field action="copy">_wphash_ab_position</custom-field>
+        <custom-field action="copy">_wphash_ab_sticky</custom-field>
+        <custom-field action="copy">_wphash_ab_close_enabled</custom-field>
+
+        <!-- Announcement Bar - Targeting -->
+        <custom-field action="copy">_wphash_ab_target_pages</custom-field>
+        <custom-field action="copy">_wphash_ab_target_page_ids</custom-field>
+        <custom-field action="copy">_wphash_ab_exclude_page_ids</custom-field>
+        <custom-field action="copy">_wphash_ab_target_devices</custom-field>
+        <custom-field action="copy">_wphash_ab_target_countries</custom-field>
+
+        <!-- Announcement Bar - Schedule -->
+        <custom-field action="copy">_wphash_ab_schedule_enabled</custom-field>
+        <custom-field action="copy">_wphash_ab_schedule_start</custom-field>
+        <custom-field action="copy">_wphash_ab_schedule_end</custom-field>
+        <custom-field action="copy">_wphash_ab_recurring_enabled</custom-field>
+        <custom-field action="copy">_wphash_ab_recurring_days</custom-field>
+        <custom-field action="copy">_wphash_ab_time_targeting_enabled</custom-field>
+        <custom-field action="copy">_wphash_ab_time_start</custom-field>
+        <custom-field action="copy">_wphash_ab_time_end</custom-field>
+
+        <!-- Announcement Bar - Animation -->
+        <custom-field action="copy">_wphash_ab_entry_animation</custom-field>
+        <custom-field action="copy">_wphash_ab_exit_animation</custom-field>
+        <custom-field action="copy">_wphash_ab_animation_duration</custom-field>
+
+        <!-- Announcement Bar - A/B Testing (Pro) -->
+        <custom-field action="copy">_wphash_ab_ab_enabled</custom-field>
+        <custom-field action="copy">_wphash_ab_ab_variants</custom-field>
+
+        <!-- ===== POPUP CAMPAIGN FIELDS ===== -->
+
+        <!-- Popup - Basic Settings -->
+        <custom-field action="copy">_wphash_popup_status</custom-field>
+        <custom-field action="copy">_wphash_popup_position</custom-field>
+        <custom-field action="copy">_wphash_popup_campaign_type</custom-field>
+        <custom-field action="copy">_wphash_popup_content_type</custom-field>
+
+        <!-- Popup - Content (Translatable) -->
+        <custom-field action="translate">_wphash_popup_heading</custom-field>
+        <custom-field action="translate">_wphash_popup_subheading</custom-field>
+        <custom-field action="translate">_wphash_popup_description</custom-field>
+        <custom-field action="translate">_wphash_popup_custom_html</custom-field>
+        <custom-field action="translate">_wphash_popup_shortcode</custom-field>
+
+        <!-- Popup - Image -->
+        <custom-field action="translate">_wphash_popup_image</custom-field>
+        <custom-field action="copy">_wphash_popup_image_position</custom-field>
+
+        <!-- Popup - CTA Button (Primary) -->
+        <custom-field action="translate">_wphash_popup_cta_text</custom-field>
+        <custom-field action="translate">_wphash_popup_cta_url</custom-field>
+        <custom-field action="copy">_wphash_popup_cta_enabled</custom-field>
+        <custom-field action="copy">_wphash_popup_cta_target</custom-field>
+        <custom-field action="copy">_wphash_popup_cta_close_on_click</custom-field>
+
+        <!-- Popup - Secondary Button -->
+        <custom-field action="translate">_wphash_popup_secondary_text</custom-field>
+        <custom-field action="translate">_wphash_popup_secondary_url</custom-field>
+        <custom-field action="copy">_wphash_popup_secondary_enabled</custom-field>
+        <custom-field action="copy">_wphash_popup_secondary_action</custom-field>
+
+        <!-- Popup - Form -->
+        <custom-field action="copy">_wphash_popup_form_enabled</custom-field>
+        <custom-field action="translate">_wphash_popup_form_fields</custom-field>
+        <custom-field action="translate">_wphash_popup_form_submit_text</custom-field>
+        <custom-field action="translate">_wphash_popup_form_submitting_text</custom-field>
+        <custom-field action="translate">_wphash_popup_form_success_message</custom-field>
+        <custom-field action="translate">_wphash_popup_form_success_redirect_url</custom-field>
+        <custom-field action="copy">_wphash_popup_form_success_action</custom-field>
+        <custom-field action="copy">_wphash_popup_form_close_delay</custom-field>
+
+        <!-- Popup - Third-party Forms -->
+        <custom-field action="copy">_wphash_popup_cf7_form_id</custom-field>
+        <custom-field action="copy">_wphash_popup_wpforms_form_id</custom-field>
+        <custom-field action="copy">_wphash_popup_ninja_form_id</custom-field>
+        <custom-field action="copy">_wphash_popup_gravity_form_id</custom-field>
+        <custom-field action="copy">_wphash_popup_fluent_form_id</custom-field>
+        <custom-field action="copy">_wphash_popup_ht_form_id</custom-field>
+
+        <!-- Popup - Mailchimp -->
+        <custom-field action="copy">_wphash_popup_mailchimp_enabled</custom-field>
+        <custom-field action="copy-once">_wphash_popup_mailchimp_api_key</custom-field>
+        <custom-field action="copy">_wphash_popup_mailchimp_list_id</custom-field>
+        <custom-field action="copy">_wphash_popup_mailchimp_double_optin</custom-field>
+        <custom-field action="translate">_wphash_popup_mailchimp_tags</custom-field>
+
+        <!-- Popup - Countdown -->
+        <custom-field action="copy">_wphash_popup_countdown_enabled</custom-field>
+        <custom-field action="copy">_wphash_popup_countdown_type</custom-field>
+        <custom-field action="copy">_wphash_popup_countdown_end_date</custom-field>
+        <custom-field action="copy">_wphash_popup_countdown_style</custom-field>
+        <custom-field action="copy">_wphash_popup_countdown_timezone</custom-field>
+        <custom-field action="copy">_wphash_popup_countdown_expired_action</custom-field>
+        <custom-field action="translate">_wphash_popup_countdown_expired_message</custom-field>
+        <custom-field action="translate">_wphash_popup_countdown_expired_redirect</custom-field>
+        <custom-field action="translate">_wphash_popup_countdown_label_days</custom-field>
+        <custom-field action="translate">_wphash_popup_countdown_label_hours</custom-field>
+        <custom-field action="translate">_wphash_popup_countdown_label_minutes</custom-field>
+        <custom-field action="translate">_wphash_popup_countdown_label_seconds</custom-field>
+
+        <!-- Popup - Coupon -->
+        <custom-field action="copy">_wphash_popup_coupon_enabled</custom-field>
+        <custom-field action="translate">_wphash_popup_coupon_code</custom-field>
+        <custom-field action="translate">_wphash_popup_coupon_label</custom-field>
+        <custom-field action="translate">_wphash_popup_coupon_description</custom-field>
+        <custom-field action="translate">_wphash_popup_coupon_copy_text</custom-field>
+        <custom-field action="translate">_wphash_popup_coupon_copied_text</custom-field>
+        <custom-field action="copy">_wphash_popup_coupon_style</custom-field>
+        <custom-field action="copy">_wphash_popup_coupon_copy_button</custom-field>
+        <custom-field action="copy">_wphash_popup_coupon_auto_copy</custom-field>
+
+        <!-- Popup - Design -->
+        <custom-field action="copy">_wphash_popup_width</custom-field>
+        <custom-field action="copy">_wphash_popup_max_width</custom-field>
+        <custom-field action="copy">_wphash_popup_padding</custom-field>
+        <custom-field action="copy">_wphash_popup_bg_type</custom-field>
+        <custom-field action="copy">_wphash_popup_bg_color</custom-field>
+        <custom-field action="copy">_wphash_popup_gradient_color</custom-field>
+        <custom-field action="copy">_wphash_popup_gradient_direction</custom-field>
+        <custom-field action="copy">_wphash_popup_bg_image</custom-field>
+        <custom-field action="copy">_wphash_popup_bg_image_size</custom-field>
+        <custom-field action="copy">_wphash_popup_bg_image_position</custom-field>
+        <custom-field action="copy">_wphash_popup_text_color</custom-field>
+        <custom-field action="copy">_wphash_popup_heading_color</custom-field>
+        <custom-field action="copy">_wphash_popup_subheading_color</custom-field>
+        <custom-field action="copy">_wphash_popup_overlay_color</custom-field>
+        <custom-field action="copy">_wphash_popup_font_family</custom-field>
+        <custom-field action="copy">_wphash_popup_heading_size</custom-field>
+        <custom-field action="copy">_wphash_popup_subheading_size</custom-field>
+        <custom-field action="copy">_wphash_popup_text_size</custom-field>
+        <custom-field action="copy">_wphash_popup_text_align</custom-field>
+        <custom-field action="copy">_wphash_popup_heading_weight</custom-field>
+        <custom-field action="copy">_wphash_popup_subheading_weight</custom-field>
+        <custom-field action="copy">_wphash_popup_text_transform</custom-field>
+        <custom-field action="copy">_wphash_popup_border_radius</custom-field>
+        <custom-field action="copy">_wphash_popup_border_width</custom-field>
+        <custom-field action="copy">_wphash_popup_border_color</custom-field>
+        <custom-field action="copy">_wphash_popup_shadow</custom-field>
+
+        <!-- Popup - Button Styling -->
+        <custom-field action="copy">_wphash_popup_btn_bg_color</custom-field>
+        <custom-field action="copy">_wphash_popup_btn_text_color</custom-field>
+        <custom-field action="copy">_wphash_popup_btn_hover_bg_color</custom-field>
+        <custom-field action="copy">_wphash_popup_btn_hover_text_color</custom-field>
+        <custom-field action="copy">_wphash_popup_btn_border_radius</custom-field>
+        <custom-field action="copy">_wphash_popup_btn_font_size</custom-field>
+        <custom-field action="copy">_wphash_popup_btn_width_type</custom-field>
+        <custom-field action="copy">_wphash_popup_btn_custom_width</custom-field>
+
+        <!-- Popup - Form Input Styling -->
+        <custom-field action="copy">_wphash_popup_form_input_bg_color</custom-field>
+        <custom-field action="copy">_wphash_popup_form_input_text_color</custom-field>
+        <custom-field action="copy">_wphash_popup_form_input_placeholder_color</custom-field>
+        <custom-field action="copy">_wphash_popup_form_input_border_color</custom-field>
+        <custom-field action="copy">_wphash_popup_form_input_focus_color</custom-field>
+        <custom-field action="copy">_wphash_popup_form_input_border_radius</custom-field>
+        <custom-field action="copy">_wphash_popup_form_input_font_size</custom-field>
+        <custom-field action="copy">_wphash_popup_form_input_height</custom-field>
+        <custom-field action="copy">_wphash_popup_form_label_color</custom-field>
+        <custom-field action="copy">_wphash_popup_form_label_font_size</custom-field>
+        <custom-field action="copy">_wphash_popup_form_checkbox_accent_color</custom-field>
+        <custom-field action="copy">_wphash_popup_form_alignment</custom-field>
+
+        <!-- Popup - Close Button -->
+        <custom-field action="copy">_wphash_popup_close_enabled</custom-field>
+        <custom-field action="copy">_wphash_popup_close_position</custom-field>
+        <custom-field action="copy">_wphash_popup_close_color</custom-field>
+        <custom-field action="copy">_wphash_popup_close_bg_color</custom-field>
+        <custom-field action="copy">_wphash_popup_close_hover_color</custom-field>
+        <custom-field action="copy">_wphash_popup_close_size</custom-field>
+        <custom-field action="copy">_wphash_popup_close_border_radius</custom-field>
+        <custom-field action="copy">_wphash_popup_overlay_enabled</custom-field>
+        <custom-field action="copy">_wphash_popup_overlay_close</custom-field>
+        <custom-field action="copy">_wphash_popup_esc_close</custom-field>
+
+        <!-- Popup - Custom CSS -->
+        <custom-field action="copy">_wphash_popup_custom_css</custom-field>
+
+        <!-- Popup - Triggers -->
+        <custom-field action="copy">_wphash_popup_trigger_type</custom-field>
+        <custom-field action="copy">_wphash_popup_trigger_delay</custom-field>
+        <custom-field action="copy">_wphash_popup_trigger_scroll_percent</custom-field>
+        <custom-field action="copy">_wphash_popup_trigger_click_selector</custom-field>
+        <custom-field action="copy">_wphash_popup_trigger_inactivity_time</custom-field>
+        <custom-field action="copy">_wphash_popup_trigger_element_selector</custom-field>
+        <custom-field action="copy">_wphash_popup_trigger_page_views_count</custom-field>
+
+        <!-- Popup - Targeting -->
+        <custom-field action="copy">_wphash_popup_target_pages</custom-field>
+        <custom-field action="copy">_wphash_popup_target_page_ids</custom-field>
+        <custom-field action="copy">_wphash_popup_exclude_page_ids</custom-field>
+        <custom-field action="copy">_wphash_popup_target_devices</custom-field>
+        <custom-field action="copy">_wphash_popup_target_user_status</custom-field>
+        <custom-field action="copy">_wphash_popup_target_new_visitors</custom-field>
+        <custom-field action="copy">_wphash_popup_target_returning_visitors</custom-field>
+        <custom-field action="copy">_wphash_popup_target_countries</custom-field>
+
+        <!-- Popup - Frequency -->
+        <custom-field action="copy">_wphash_popup_frequency</custom-field>
+        <custom-field action="copy">_wphash_popup_frequency_days</custom-field>
+        <custom-field action="copy">_wphash_popup_frequency_times</custom-field>
+
+        <!-- Popup - Schedule -->
+        <custom-field action="copy">_wphash_popup_schedule_enabled</custom-field>
+        <custom-field action="copy">_wphash_popup_schedule_start</custom-field>
+        <custom-field action="copy">_wphash_popup_schedule_end</custom-field>
+        <custom-field action="copy">_wphash_popup_schedule_timezone</custom-field>
+
+        <!-- Popup - Animation -->
+        <custom-field action="copy">_wphash_popup_entry_animation</custom-field>
+        <custom-field action="copy">_wphash_popup_exit_animation</custom-field>
+        <custom-field action="copy">_wphash_popup_animation_duration</custom-field>
+
+        <!-- Popup - A/B Testing (Pro) -->
+        <custom-field action="copy">_wphash_popup_ab_enabled</custom-field>
+        <custom-field action="copy">_wphash_popup_ab_variants</custom-field>
+
+        <!-- Popup - Spin Wheel (Pro) -->
+        <custom-field action="translate">_wphash_popup_spinwheel_segments</custom-field>
+        <custom-field action="copy">_wphash_popup_spinwheel_enabled</custom-field>
+    </custom-fields>
+</wpml-config>

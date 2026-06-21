@@ -1,0 +1,147 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hashbar/hashbar-button",
+	"title": "Hashbar Notification",
+	"icon": "info",
+	"category": "hashbar-blocks",
+	"keywords": [ "hashbar", "button", "notification" ],
+	"textdomain": "hashbar",
+	"example": {
+		"attributes": {
+			"hashbarContent": "New Year, New Savings: Mega Bundle Upgrade Offer! Only <strong>$159</strong>"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"attributes": {
+		"id": {
+			"type": "string"
+		},
+		"textAlignment": {
+			"type": "string"
+		},
+
+		"contentFont": {
+			"type": "string"
+		},
+		"contentSize": {
+			"type": "number"
+		},
+		"contentWeight": {
+			"type": "string"
+		},
+		"contentLineHeight": {
+			"type": "number"
+		},
+		"contentLetterSpacing": {
+			"type": "number"
+		},
+		"contentDecoration": {
+			"type": "string"
+		},
+		"contentTransform": {
+			"type": "string"
+		},
+		"contentColor": {
+			"type": "string"
+		},
+
+		
+		"hasbarBtnFontSize":{
+			"type":"number",
+			"default":18
+		},
+		"btnWeight": {
+			"type": "string"
+		},
+		"btnLineHeight": {
+			"type": "number"
+		},
+		"btnLetterSpacing": {
+			"type": "number"
+		},
+		"btnDecoration": {
+			"type": "string"
+		},
+		"btnTransform": {
+			"type": "string"
+		},
+
+		"hasbarButton":{
+			"type":"object",
+			"default":{
+				"text":"Button",
+				"link":"#"
+			}
+		},
+		"hashbarBtnRemove":{
+			"type":"string",
+			"default":"yes"
+		},
+		"hashbarBtnNofollow":{
+			"type":"string",
+			"default":"no"
+		},
+		"hashbarBtnSponsor":{
+			"type":"string",
+			"default":"no"
+		},
+		"hashbarBtnNewTab":{
+			"type":"string",
+			"default":"no"
+		},
+		"hashbarContent":{
+			"type":"string",
+			"default": "New Year, New Savings: Mega Bundle Upgrade Offer! Only <strong>$159</strong>"
+		},
+		"BtnBorderRadius":{
+			"type":"number",
+			"default":3
+		},
+		"BtnMarginTop":{
+			"type": "number",
+			"default": 0
+		},
+		"BtnMarginRight":{
+			"type":"number",
+			"default":20
+		},
+		"BtnMarginBottom":{
+			"type":"number",
+			"default":0
+		},
+		"BtnMarginLeft":{
+			"type":"number",
+			"default":20
+		},
+		"BtnPaddingTop":{
+			"type": "number",
+			"default": 10
+		},
+		"BtnPaddingRight":{
+			"type":"number",
+			"default":30
+		},
+		"BtnPaddingBottom":{
+			"type":"number",
+			"default":10
+		},
+		"BtnPaddingLeft":{
+			"type":"number",
+			"default":30
+		},
+		"hasbarBtnBgColor":{
+			"type":"string",
+			"default":"#fdd835"
+		},
+		"hasbarBtnBgColorHover":{
+			"type":"string"
+		},
+		"hasbarBtnTxtColor":{
+			"type":"string"
+		},
+		"hasbarBtnTxtColorHover":{
+			"type":"string"
+		}
+	}
+}

@@ -1,0 +1,474 @@
+/**
+ * Announcement Bar Frontend Styles
+ *
+ * Responsive and animated styles for announcement bars displayed on the frontend.
+ */
+
+/* Container */
+.hashbar-announcement-bars-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+/* Bar Wrapper */
+.hashbar-announcement-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Main Bar */
+.hashbar-announcement-bar {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+/* Content */
+.hashbar-announcement-content {
+  flex: 1;
+  min-width: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  display: flex;
+  align-items: center;
+  justify-content: inherit;
+}
+
+/*
+ * Message rich text: `.hashbar-announcement-bar` sets --hashbar-announcement-* via inline styles.
+ * Many themes target `p`, `a`, lists with higher specificity than inherited values from the bar.
+ * Scope typography to `.hashbar-announcement-message` so Design-tab settings apply to nested tags.
+ * User/admin inline styles inside the message still override these rules normally.
+ */
+div.hashbar-announcement-bar .hashbar-announcement-content .hashbar-announcement-message {
+  color: var(--hashbar-announcement-color, inherit);
+  font-family: var(--hashbar-announcement-font-family, inherit);
+  font-size: var(--hashbar-announcement-font-size, inherit);
+  font-weight: var(--hashbar-announcement-font-weight, inherit);
+  line-height: normal;
+  text-align: inherit;
+}
+
+div.hashbar-announcement-bar .hashbar-announcement-content .hashbar-announcement-message :is(p, li, ul, ol, blockquote) {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  word-break: break-word;
+}
+
+div.hashbar-announcement-bar .hashbar-announcement-content .hashbar-announcement-message a:not(.hashbar-announcement-cta) {
+  color: inherit;
+}
+
+div.hashbar-announcement-bar .hashbar-announcement-content .hashbar-announcement-message :is(ul, ol) {
+  padding-inline-start: 1.25em;
+}
+
+/* Buttons */
+.hashbar-announcement-close,
+.hashbar-announcement-cta,
+.hashbar-reopen-btn {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.hashbar-announcement-close:hover {
+  background-color: var(--close-hover-bg) !important;
+  color: var(--close-hover-color) !important;
+  opacity: 0.8;
+  transform: scale(1.02);
+}
+
+.hashbar-announcement-cta {
+  text-decoration: none !important;
+}
+
+.hashbar-announcement-cta:hover {
+  background-color: var(--cta-hover-bg) !important;
+  color: var(--cta-hover-color) !important;
+  opacity: 0.8;
+  transform: scale(1.02);
+}
+
+.hashbar-reopen-btn:hover {
+  background-color: var(--reopen-hover-bg) !important;
+  color: var(--reopen-hover-color) !important;
+  opacity: 0.8;
+  transform: scale(1.02);
+}
+
+.hashbar-announcement-close:active,
+.hashbar-announcement-cta:active,
+.hashbar-reopen-btn:active {
+  transform: scale(0.98);
+}
+
+.hashbar-announcement-close {
+  min-width: 40px;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+/* Reopen Button */
+.hashbar-reopen-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9998;
+  animation: slideInUp 0.3s ease-out;
+}
+
+.hashbar-reopen-btn {
+  text-decoration: none !important;
+}
+
+.hashbar-reopen-btn:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Countdown Timer Wrapper - for circular and box styles */
+.hashbar-countdown-timer-wrapper {
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Countdown Timer Text - for simple and digital styles */
+.hashbar-countdown-timer-text {
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+/* Countdown Timer Styles */
+.hashbar-countdown-timer-text.countdown-simple {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+  font-size: inherit;
+}
+
+.hashbar-countdown-timer-text.countdown-digital {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+  font-size: 1.05em;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Countdown Unit - Container for box + label */
+.hb-countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 70px;
+  min-height: 70px;
+  padding: 4px 2px;
+  border: 2px solid currentColor;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-weight: 700;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-family: 'Courier New', 'Courier', monospace;
+}
+
+.hb-countdown-unit .hb-countdown-box,
+.hb-countdown-unit .hb-countdown-circle-box {
+  flex-shrink: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hb-countdown-unit .countdown-label {
+  margin-top: 4px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Unique countdown unit styles */
+.hb-countdown-unit.hb-countdown-days {
+  /* Days unit styling */
+}
+
+.hb-countdown-unit.hb-countdown-hours {
+  /* Hours unit styling */
+}
+
+.hb-countdown-unit.hb-countdown-minutes {
+  /* Minutes unit styling */
+}
+
+.hb-countdown-unit.hb-countdown-seconds {
+  /* Seconds unit styling */
+}
+
+.countdown-circular {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: 0 4px;
+}
+
+/* Circular countdown style - perfect circle with border */
+.hb-countdown-unit.hb-countdown-circular {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  padding: 0;
+  border: 2px solid currentColor;
+  border-width: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hb-countdown-unit.hb-countdown-circular .countdown-number {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hb-countdown-unit.hb-countdown-circular .countdown-label {
+  font-size: 10px;
+  font-weight: 500;
+  margin-top: 2px;
+  display: block;
+}
+
+/* Countdown number styling */
+.countdown-number {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+
+/* Coupon Display */
+.hashbar-coupon-display {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.hashbar-coupon-display code {
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+.hashbar-coupon-copy {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.hashbar-coupon-copy:hover {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+/* Mobile/Responsive */
+@media (max-width: 768px) {
+  .hashbar-announcement-bar {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hashbar-announcement-content {
+    text-align: center;
+  }
+
+  .hashbar-reopen-button {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .hashbar-reopen-btn {
+    padding: 10px 16px;
+  }
+}
+
+/* Accessibility */
+.hashbar-announcement-bar:focus-within {
+  outline: 2px solid rgba(0, 0, 0, 0.1);
+  outline-offset: 2px;
+}
+
+.hashbar-announcement-close:focus,
+.hashbar-announcement-cta:focus,
+.hashbar-reopen-btn:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.3);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .hashbar-announcement-bar,
+  .hashbar-reopen-button {
+    display: none !important;
+  }
+}

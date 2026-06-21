@@ -1,0 +1,1972 @@
+/**
+ * Popup Campaign Frontend Styles
+ *
+ * Matches the Live Preview styling from PopupPreview.jsx/scss
+ *
+ * @package HashBar
+ * @since 2.0.0
+ */
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+.hashbar-popup-campaigns-container,
+.hashbar-popup-campaigns-container *,
+.hashbar-popup-campaigns-container *::before,
+.hashbar-popup-campaigns-container *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Overlay
+   ========================================================================== */
+.hashbar-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--hashbar-popup-duration, 300ms) ease, visibility var(--hashbar-popup-duration, 300ms) ease;
+}
+
+.hashbar-popup-overlay.hashbar-popup-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================================================
+   Popup Campaign Container
+   ========================================================================== */
+.hashbar-popup-campaign {
+  position: fixed;
+  z-index: 999999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--hashbar-popup-duration, 300ms) ease, visibility var(--hashbar-popup-duration, 300ms) ease, transform var(--hashbar-popup-duration, 300ms) ease;
+  outline: none;
+}
+
+.hashbar-popup-campaign:focus,
+.hashbar-popup-campaign:focus-visible {
+  outline: none;
+}
+
+.hashbar-popup-campaign.hashbar-popup-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================================================
+   Position Variants
+   ========================================================================== */
+
+/* Center Modal */
+.hashbar-popup-campaign.hashbar-popup-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hashbar-popup-campaign.hashbar-popup-center.hashbar-popup-visible {
+  transform: translate(-50%, -50%);
+}
+
+/* Bottom Right Slide-in */
+.hashbar-popup-campaign.hashbar-popup-bottom-right {
+  bottom: 20px;
+  right: 20px;
+  transform: translateY(20px);
+}
+
+.hashbar-popup-campaign.hashbar-popup-bottom-right.hashbar-popup-visible {
+  transform: translateY(0);
+}
+
+/* Bottom Left Slide-in */
+.hashbar-popup-campaign.hashbar-popup-bottom-left {
+  bottom: 20px;
+  left: 20px;
+  transform: translateY(20px);
+}
+
+.hashbar-popup-campaign.hashbar-popup-bottom-left.hashbar-popup-visible {
+  transform: translateY(0);
+}
+
+/* Fullscreen Overlay */
+.hashbar-popup-campaign.hashbar-popup-fullscreen {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.hashbar-popup-campaign.hashbar-popup-fullscreen .hashbar-popup-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  border-radius: 0 !important;
+  overflow-y: auto;
+}
+
+/* Left Side Panel */
+.hashbar-popup-campaign.hashbar-popup-side-left {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  transform: translateX(-100%);
+  overflow: hidden;
+}
+
+.hashbar-popup-campaign.hashbar-popup-side-left.hashbar-popup-visible {
+  transform: translateX(0);
+}
+
+.hashbar-popup-campaign.hashbar-popup-side-left .hashbar-popup-container {
+  height: 100%;
+  max-height: 100%;
+  border-radius: 0 !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Right Side Panel */
+.hashbar-popup-campaign.hashbar-popup-side-right {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  transform: translateX(100%);
+  overflow: hidden;
+}
+
+.hashbar-popup-campaign.hashbar-popup-side-right.hashbar-popup-visible {
+  transform: translateX(0);
+}
+
+.hashbar-popup-campaign.hashbar-popup-side-right .hashbar-popup-container {
+  height: 100%;
+  max-height: 100%;
+  border-radius: 0 !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Floating Box */
+.hashbar-popup-campaign.hashbar-popup-floating {
+  bottom: 80px;
+  right: 20px;
+  transform: translateY(20px) scale(0.95);
+}
+
+.hashbar-popup-campaign.hashbar-popup-floating.hashbar-popup-visible {
+  transform: translateY(0) scale(1);
+}
+
+/* ==========================================================================
+   Popup Container (Inner Box)
+   ========================================================================== */
+.hashbar-popup-container {
+  position: relative;
+  padding: 24px;
+  /* background color is set via inline styles */
+  /* overflow is set conditionally via inline styles - hidden by default, visible when close button is outside */
+}
+
+/* Prevent scroll/overflow issues - but allow close button to overflow */
+.hashbar-popup-content {
+  overflow: hidden;
+}
+
+.hashbar-popup-container > *:not(.hashbar-popup-close) {
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   Close Button
+   ========================================================================== */
+.hashbar-popup-close {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+}
+
+.hashbar-popup-close svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.hashbar-popup-close:hover {
+  filter: brightness(0.9);
+  color: var(--close-hover-color, #1a1a1a) !important;
+}
+
+.hashbar-popup-close:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+  outline-offset: 2px;
+}
+
+/* Close Button Positions */
+.hashbar-popup-close.hashbar-popup-close-top-right {
+  top: 8px;
+  right: 8px;
+}
+
+.hashbar-popup-close.hashbar-popup-close-top-left {
+  top: 8px;
+  left: 8px;
+}
+
+.hashbar-popup-close.hashbar-popup-close-bottom-right {
+  bottom: 8px;
+  right: 8px;
+}
+
+.hashbar-popup-close.hashbar-popup-close-bottom-left {
+  bottom: 8px;
+  left: 8px;
+}
+
+.hashbar-popup-close.hashbar-popup-close-outside {
+  top: -12px;
+  right: -12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   Content Area
+   ========================================================================== */
+.hashbar-popup-content {
+  display: block;
+  width: 100%;
+}
+
+.hashbar-popup-body {
+  width: 100%;
+}
+
+/* Image left/right layout */
+.hashbar-popup-content:has(.hashbar-popup-image--left),
+.hashbar-popup-content:has(.hashbar-popup-image--right) {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hashbar-popup-content:has(.hashbar-popup-image--left) .hashbar-popup-body,
+.hashbar-popup-content:has(.hashbar-popup-image--right) .hashbar-popup-body {
+  flex: 1;
+}
+
+/* ==========================================================================
+   Image Styles
+   ========================================================================== */
+.hashbar-popup-image {
+  text-align: center;
+}
+
+.hashbar-popup-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.hashbar-popup-image--top {
+  margin-bottom: 16px;
+}
+
+.hashbar-popup-image--bottom {
+  margin-top: 16px;
+}
+
+.hashbar-popup-image--left,
+.hashbar-popup-image--right {
+  flex-shrink: 0;
+  width: 120px;
+  text-align: left;
+}
+
+.hashbar-popup-image--left img,
+.hashbar-popup-image--right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+.hashbar-popup-heading {
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.hashbar-popup-subheading {
+  margin: 0 0 8px 0;
+  font-weight: 500;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.hashbar-popup-description {
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.hashbar-popup-description p {
+  margin: 0 0 8px 0;
+}
+
+.hashbar-popup-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Countdown Timer
+   ========================================================================== */
+.hashbar-popup-countdown {
+  display: flex;
+  align-items: flex-start;
+  justify-content: var(--content-justify, center);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.hashbar-popup-countdown-units {
+  display: flex;
+  align-items: flex-start;
+  justify-content: var(--content-justify, center);
+  gap: 8px;
+}
+
+.hashbar-popup-countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hashbar-popup-countdown-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 6px;
+  min-width: 54px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  background-color: var(--countdown-bg, #1890ff);
+  color: var(--countdown-text, #ffffff);
+}
+
+.hashbar-popup-countdown-label {
+  font-size: 10px;
+  margin-top: 4px;
+  font-weight: 500;
+  color: var(--countdown-label, #666666);
+}
+
+.hashbar-popup-countdown-sep {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 2px;
+  padding-top: 10px;
+  color: var(--countdown-label, #666666);
+}
+
+/* Countdown Style: Circles */
+.hashbar-popup-countdown--circles .hashbar-popup-countdown-number {
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  padding: 0;
+}
+
+/* Countdown Style: Boxes (default) */
+.hashbar-popup-countdown--boxes .hashbar-popup-countdown-number {
+  border-radius: 6px;
+}
+
+/* Countdown Style: Flip */
+.hashbar-popup-countdown--flip .hashbar-popup-countdown-number {
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Countdown Style: Inline */
+.hashbar-popup-countdown--inline {
+  align-items: center;
+}
+
+.hashbar-popup-countdown-inline-wrapper {
+  display: flex;
+  justify-content: var(--content-justify, center);
+}
+
+.hashbar-popup-countdown--inline .hashbar-popup-countdown-inline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--countdown-text, #1890ff);
+}
+
+.hashbar-countdown-inline-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.hashbar-popup-countdown-inline-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--countdown-label, #666666);
+}
+
+.hashbar-popup-countdown--inline .hashbar-popup-countdown-sep {
+  padding-top: 0;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+/* Countdown Style: Digital */
+.hashbar-popup-countdown--digital {
+  display: flex;
+  justify-content: var(--content-justify, center);
+}
+
+.hashbar-popup-countdown-digital {
+  display: flex;
+  justify-content: var(--content-justify, center);
+}
+
+.hashbar-popup-countdown-digital-display {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background-color: var(--countdown-bg, #1890ff);
+  color: var(--countdown-text, #ffffff);
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hashbar-popup-countdown-digital-display span[data-countdown-days],
+.hashbar-popup-countdown-digital-display span[data-countdown-hours],
+.hashbar-popup-countdown-digital-display span[data-countdown-minutes],
+.hashbar-popup-countdown-digital-display span[data-countdown-seconds] {
+  min-width: 2ch;
+  text-align: center;
+}
+
+.hashbar-popup-countdown-digital-sep {
+  opacity: 0.8;
+  margin: 0 2px;
+}
+
+/* Digital Countdown Size Variations */
+.hashbar-popup-countdown--digital.hashbar-popup-countdown--small .hashbar-popup-countdown-digital-display {
+  font-size: 20px;
+  padding: 8px 14px;
+  letter-spacing: 1px;
+}
+
+.hashbar-popup-countdown--digital.hashbar-popup-countdown--medium .hashbar-popup-countdown-digital-display {
+  font-size: 28px;
+  padding: 12px 20px;
+  letter-spacing: 2px;
+}
+
+.hashbar-popup-countdown--digital.hashbar-popup-countdown--large .hashbar-popup-countdown-digital-display {
+  font-size: 36px;
+  padding: 16px 24px;
+  letter-spacing: 3px;
+}
+
+/* Countdown Expired */
+.hashbar-popup-countdown-expired {
+  text-align: var(--content-align, center);
+  padding: 16px;
+  font-weight: 500;
+  opacity: 0.8;
+  color: inherit;
+}
+
+/* ==========================================================================
+   Coupon Code
+   ========================================================================== */
+.hashbar-popup-coupon {
+  margin-bottom: 16px;
+  text-align: var(--content-align, center);
+}
+
+.hashbar-popup-coupon-label {
+  font-size: var(--coupon-label-font-size, 14px);
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: var(--coupon-label-color, #666666);
+}
+
+.hashbar-popup-coupon-description {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: var(--coupon-description-color, #888888);
+}
+
+.hashbar-popup-coupon-code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-weight: 700;
+  background-color: var(--coupon-bg, #f5f5f5);
+  color: var(--coupon-text, #1a1a1a);
+  border-color: var(--coupon-border, #d9d9d9);
+  font-size: var(--coupon-font-size, 18px);
+}
+
+.hashbar-popup-coupon-code code {
+  letter-spacing: 2px;
+  background: transparent;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.hashbar-popup-coupon-copy {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: var(--coupon-btn-bg, #1890ff);
+  border: 1px solid var(--coupon-btn-bg, #1890ff);
+  border-radius: 4px;
+  color: var(--coupon-btn-text, #ffffff);
+  font-size: var(--coupon-btn-font-size, 14px);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.hashbar-popup-coupon-copy:hover {
+  opacity: 0.9;
+}
+
+.hashbar-popup-coupon-copy svg {
+  width: 14px;
+  height: 14px;
+}
+
+.hashbar-popup-coupon-copy.hashbar-copied {
+  background: var(--coupon-copied-bg, #52c41a);
+  border-color: var(--coupon-copied-bg, #52c41a);
+}
+
+/* Coupon code copied tooltip */
+.hashbar-popup-coupon-code {
+  position: relative;
+}
+
+.hashbar-popup-coupon-code.hashbar-copied {
+  cursor: default;
+}
+
+.hashbar-copied-tooltip {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--coupon-copied-bg, #52c41a);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 10;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.hashbar-copied-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0;
+  border-style: solid;
+  border-color: var(--coupon-copied-bg, #52c41a) transparent transparent transparent;
+}
+
+/* Click to copy hover tooltip */
+.hashbar-click-to-copy-tooltip {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333333;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 10;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  pointer-events: none;
+}
+
+.hashbar-click-to-copy-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0;
+  border-style: solid;
+  border-color: #333333 transparent transparent transparent;
+}
+
+.hashbar-popup-coupon-code.hashbar-autocopy:hover .hashbar-click-to-copy-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hide click to copy tooltip when copied tooltip is visible */
+.hashbar-popup-coupon-code.hashbar-copied .hashbar-click-to-copy-tooltip {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Coupon Style: Simple */
+.hashbar-popup-coupon--simple .hashbar-popup-coupon-code {
+  border: 1px solid var(--coupon-border, #d9d9d9);
+}
+
+/* Coupon Style: Dashed */
+.hashbar-popup-coupon--dashed .hashbar-popup-coupon-code {
+  border: 2px dashed var(--coupon-border, #d9d9d9);
+}
+
+/* Coupon Style: Ticket */
+.hashbar-popup-coupon--ticket .hashbar-popup-coupon-code {
+  border: 2px solid var(--coupon-border, #d9d9d9);
+  border-radius: 0;
+  position: relative;
+}
+
+.hashbar-popup-coupon--ticket .hashbar-popup-coupon-code::before,
+.hashbar-popup-coupon--ticket .hashbar-popup-coupon-code::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hashbar-popup-coupon--ticket .hashbar-popup-coupon-code::before {
+  left: -8px;
+  border-right: 2px solid var(--coupon-border, #d9d9d9);
+}
+
+.hashbar-popup-coupon--ticket .hashbar-popup-coupon-code::after {
+  right: -8px;
+  border-left: 2px solid var(--coupon-border, #d9d9d9);
+}
+
+/* Coupon Style: Gradient */
+.hashbar-popup-coupon--gradient .hashbar-popup-coupon-code {
+  border: none;
+  background: linear-gradient(135deg, var(--coupon-gradient-start, #667eea) 0%, var(--coupon-gradient-end, #764ba2) 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hashbar-popup-coupon--gradient .hashbar-popup-coupon-copy {
+  background: var(--coupon-btn-bg, #1890ff);
+  border-color: var(--coupon-btn-bg, #1890ff);
+  color: var(--coupon-btn-text, #ffffff);
+}
+
+/* ==========================================================================
+   Form Styles
+   ========================================================================== */
+.hashbar-popup-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: var(--form-justify, center);
+  text-align: var(--form-align, center);
+}
+
+.hashbar-popup-form-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: var(--form-justify, center);
+  gap: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.hashbar-popup-field {
+  width: 100%;
+}
+
+.hashbar-popup-field--half {
+  width: calc(50% - 5px);
+}
+
+.hashbar-popup-label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: var(--form-label-size, 12px);
+  color: var(--form-label-color, #333333);
+  text-align: var(--form-align, center);
+}
+
+.hashbar-popup-required {
+  color: #f5222d;
+  margin-left: 2px;
+}
+
+.hashbar-popup-field input[type="text"],
+.hashbar-popup-field input[type="email"],
+.hashbar-popup-field input[type="tel"],
+.hashbar-popup-field input[type="date"],
+.hashbar-popup-field textarea,
+.hashbar-popup-field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--form-input-border, #d9d9d9);
+  border-radius: var(--form-input-radius, 6px);
+  font-size: var(--form-input-size, 14px);
+  font-family: inherit;
+  background-color: var(--form-input-bg, #ffffff);
+  color: var(--form-input-text, #333333);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  height: var(--form-input-height, 40px);
+}
+
+.hashbar-popup-field textarea {
+  height: auto;
+  min-height: 80px;
+  resize: vertical;
+}
+
+.hashbar-popup-field input:focus,
+.hashbar-popup-field textarea:focus,
+.hashbar-popup-field select:focus {
+  border-color: var(--form-input-focus, #1890ff) !important;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+.hashbar-popup-field input::placeholder,
+.hashbar-popup-field textarea::placeholder {
+  color: var(--form-input-placeholder, #999999);
+}
+
+/* Checkbox & Radio */
+.hashbar-popup-checkbox-label,
+.hashbar-popup-radio-label {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  font-size: var(--form-label-size, 12px);
+  color: var(--form-label-color, #333333);
+  text-align: left;
+}
+
+.hashbar-popup-checkbox-label input,
+.hashbar-popup-radio-label input {
+  margin-top: 2px;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--form-checkbox-accent, #1890ff);
+}
+
+.hashbar-popup-checkbox-label span,
+.hashbar-popup-radio-label span {
+  line-height: 1.4;
+}
+
+.hashbar-popup-radio-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: var(--form-justify, center);
+  gap: 12px;
+  text-align: left;
+}
+
+/* Checkbox field alignment */
+.hashbar-popup-field--checkbox,
+.hashbar-popup-field--consent {
+  text-align: var(--form-align, center);
+}
+
+/* Submit Button Wrapper */
+.hashbar-popup-form-actions {
+  width: 100%;
+  text-align: var(--form-align, center);
+  margin-top: 6px;
+}
+
+/* Submit Button */
+.hashbar-popup-submit {
+  display: var(--btn-display, inline-block);
+  width: var(--btn-width, auto);
+  padding: 12px 32px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  background-color: var(--btn-bg-color, #1890ff);
+  color: var(--btn-text-color, #ffffff);
+  border-radius: var(--btn-border-radius, 6px);
+  font-size: var(--btn-font-size, 16px);
+}
+
+.hashbar-popup-submit:hover {
+  background-color: var(--btn-hover-bg-color, #40a9ff) !important;
+  color: var(--btn-hover-text-color, #ffffff) !important;
+}
+
+.hashbar-popup-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Form Messages */
+.hashbar-popup-form-message {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.hashbar-popup-form-message.hashbar-popup-form-success {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  color: #52c41a;
+}
+
+.hashbar-popup-form-message.hashbar-popup-form-error {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  color: #ff4d4f;
+}
+
+/* Success State (replaces form content) */
+.hashbar-popup-form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  min-height: 150px;
+}
+
+.hashbar-popup-form-success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(82, 196, 26, 0.4);
+  animation: hashbar-success-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hashbar-popup-form-success-message {
+  font-size: 18px;
+  font-weight: 600;
+  color: inherit;
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+.hashbar-popup-form-redirecting {
+  font-size: 14px;
+  font-weight: 400;
+  color: inherit;
+  opacity: 0.7;
+  margin-top: 8px;
+}
+
+@keyframes hashbar-success-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* External Form Wrapper (CF7, WPForms, etc.) */
+.hashbar-popup-external-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: var(--form-justify, center);
+  text-align: var(--form-align, left);
+  pointer-events: auto;
+}
+
+/* External Content Wrapper (Visual Editor, Shortcode) */
+.hashbar-popup-external-content {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Global Form Styles - Works with any form plugin
+   ========================================================================== */
+.hashbar-popup-external-form form {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+  pointer-events: auto;
+}
+
+.hashbar-popup-external-form form * {
+  pointer-events: auto;
+}
+
+/* Labels */
+.hashbar-popup-external-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: inherit;
+  font-size: 14px;
+}
+
+/* All text inputs, textareas, selects - FALLBACK styles only */
+/* These are low-specificity defaults, form plugins with their own styles will override */
+.hashbar-popup-external-form input[type="text"],
+.hashbar-popup-external-form input[type="email"],
+.hashbar-popup-external-form input[type="tel"],
+.hashbar-popup-external-form input[type="number"],
+.hashbar-popup-external-form input[type="url"],
+.hashbar-popup-external-form input[type="password"],
+.hashbar-popup-external-form input[type="search"],
+.hashbar-popup-external-form input[type="date"],
+.hashbar-popup-external-form input[type="time"],
+.hashbar-popup-external-form input[type="datetime-local"],
+.hashbar-popup-external-form textarea,
+.hashbar-popup-external-form select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Focus state - exclude submit buttons */
+.hashbar-popup-external-form input[type="text"]:focus,
+.hashbar-popup-external-form input[type="email"]:focus,
+.hashbar-popup-external-form input[type="tel"]:focus,
+.hashbar-popup-external-form input[type="number"]:focus,
+.hashbar-popup-external-form input[type="url"]:focus,
+.hashbar-popup-external-form input[type="password"]:focus,
+.hashbar-popup-external-form input[type="search"]:focus,
+.hashbar-popup-external-form textarea:focus,
+.hashbar-popup-external-form select:focus {
+  outline: none;
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
+}
+
+/* Textarea specific */
+.hashbar-popup-external-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Checkboxes and Radios */
+.hashbar-popup-external-form input[type="checkbox"],
+.hashbar-popup-external-form input[type="radio"] {
+  width: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Submit buttons */
+.hashbar-popup-external-form input[type="submit"],
+.hashbar-popup-external-form button[type="submit"],
+.hashbar-popup-external-form .submit-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #4a90d9;
+  color: #fff !important;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  text-transform: none;
+  line-height: 1.4;
+  width: auto;
+  min-width: 120px;
+  text-align: center;
+}
+
+.hashbar-popup-external-form input[type="submit"]:hover,
+.hashbar-popup-external-form button[type="submit"]:hover,
+.hashbar-popup-external-form .submit-btn:hover {
+  background: #3a7bc8;
+}
+
+.hashbar-popup-external-form input[type="submit"]:active,
+.hashbar-popup-external-form button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* Fieldset - remove borders */
+.hashbar-popup-external-form fieldset {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 0 15px 0 !important;
+  background: transparent !important;
+  min-width: 0;
+}
+
+.hashbar-popup-external-form fieldset legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: inherit;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Field wrappers / groups */
+.hashbar-popup-external-form p,
+.hashbar-popup-external-form .form-group,
+.hashbar-popup-external-form .field-wrap {
+  margin-bottom: 15px;
+}
+
+/* Sub-labels (First, Last, etc.) */
+.hashbar-popup-external-form .sublabel,
+.hashbar-popup-external-form [class*="sublabel"],
+.hashbar-popup-external-form small {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Required asterisk */
+.hashbar-popup-external-form .required,
+.hashbar-popup-external-form abbr[title="required"] {
+  color: #dc3545;
+  text-decoration: none;
+}
+
+/* Error messages */
+.hashbar-popup-external-form .error,
+.hashbar-popup-external-form [class*="error"]:not(input):not(select):not(textarea) {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* Success messages */
+.hashbar-popup-external-form .success,
+.hashbar-popup-external-form [class*="success"]:not(input):not(button) {
+  padding: 12px 15px;
+  background: #d4edda;
+  color: #155724;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+/* Row layouts (multiple fields side by side) */
+.hashbar-popup-external-form .form-row,
+.hashbar-popup-external-form [class*="field-row"],
+.hashbar-popup-external-form [class*="row-block"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hashbar-popup-external-form .form-row > *,
+.hashbar-popup-external-form [class*="field-row"] > * {
+  flex: 1;
+  min-width: 120px;
+}
+
+/* Placeholder styling */
+.hashbar-popup-external-form ::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+/* Disabled state */
+.hashbar-popup-external-form input:disabled,
+.hashbar-popup-external-form textarea:disabled,
+.hashbar-popup-external-form select:disabled,
+.hashbar-popup-external-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading/spinner state */
+.hashbar-popup-external-form .loading,
+.hashbar-popup-external-form [class*="spinner"],
+.hashbar-popup-external-form [class*="loading"] {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* File input */
+.hashbar-popup-external-form input[type="file"] {
+  padding: 8px;
+  border: 1px dashed #ddd;
+  border-radius: 4px;
+  background: #f9f9f9;
+  width: 100%;
+}
+
+/* Hidden fields - ensure they stay hidden */
+.hashbar-popup-external-form input[type="hidden"] {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Plugin-Specific Overrides
+   ========================================================================== */
+
+/* HT Contact Form Styles inside Popup */
+.hashbar-popup-external-form .ht-form {
+  width: 100%;
+  max-width: 100%;
+}
+
+.hashbar-popup-external-form .ht-form .ht-form-elem {
+  margin-bottom: 15px;
+}
+
+.hashbar-popup-external-form .ht-form .ht-form-elem-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: inherit;
+}
+
+/* HT Form - only width, let form's own styler handle appearance */
+.hashbar-popup-external-form .ht-form input[type="text"],
+.hashbar-popup-external-form .ht-form input[type="email"],
+.hashbar-popup-external-form .ht-form input[type="tel"],
+.hashbar-popup-external-form .ht-form input[type="number"],
+.hashbar-popup-external-form .ht-form input[type="url"],
+.hashbar-popup-external-form .ht-form textarea,
+.hashbar-popup-external-form .ht-form select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hashbar-popup-external-form .ht-form .ht-form-message {
+  margin-bottom: 15px;
+}
+
+.hashbar-popup-external-form .ht-form .ht-form-success {
+  padding: 12px;
+  background: #d4edda;
+  color: #155724;
+  border-radius: 4px;
+}
+
+.hashbar-popup-external-form .ht-form .ht-form-error {
+  padding: 12px;
+  background: #f8d7da;
+  color: #721c24;
+  border-radius: 4px;
+}
+
+/* HT Form Row Layout */
+.hashbar-popup-external-form .ht-form .ht-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.hashbar-popup-external-form .ht-form .ht-form-row > .ht-form-elem {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 0;
+}
+
+/* WPForms Styles inside Popup */
+.hashbar-popup-external-form .wpforms-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+.hashbar-popup-external-form .wpforms-form .wpforms-field {
+  margin-bottom: 15px;
+}
+
+.hashbar-popup-external-form .wpforms-form .wpforms-field-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: inherit;
+}
+
+.hashbar-popup-external-form .wpforms-form input[type="text"],
+.hashbar-popup-external-form .wpforms-form input[type="email"],
+.hashbar-popup-external-form .wpforms-form input[type="tel"],
+.hashbar-popup-external-form .wpforms-form input[type="number"],
+.hashbar-popup-external-form .wpforms-form input[type="url"],
+.hashbar-popup-external-form .wpforms-form textarea,
+.hashbar-popup-external-form .wpforms-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #fff;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.hashbar-popup-external-form .wpforms-form input:focus,
+.hashbar-popup-external-form .wpforms-form textarea:focus,
+.hashbar-popup-external-form .wpforms-form select:focus {
+  outline: none;
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
+}
+
+.hashbar-popup-external-form .wpforms-form .wpforms-submit-container {
+  margin-top: 15px;
+}
+
+.hashbar-popup-external-form .wpforms-form button[type="submit"],
+.hashbar-popup-external-form .wpforms-form .wpforms-submit,
+.hashbar-popup-external-form .wpforms-form .wpforms-page-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #4a90d9 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  width: auto;
+  min-width: 120px;
+  text-align: center;
+}
+
+.hashbar-popup-external-form .wpforms-form button[type="submit"]:hover,
+.hashbar-popup-external-form .wpforms-form .wpforms-submit:hover {
+  background: #3a7bc8;
+}
+
+/* WPForms Field Rows */
+.hashbar-popup-external-form .wpforms-form .wpforms-field-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.hashbar-popup-external-form .wpforms-form .wpforms-field-row .wpforms-field {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* WPForms Field Container */
+.hashbar-popup-external-form .wpforms-form .wpforms-field {
+  margin-bottom: 15px !important;
+}
+
+/* WPForms Name Field - Fix fieldset styling */
+.hashbar-popup-external-form .wpforms-form fieldset,
+.hashbar-popup-external-form .wpforms-form .wpforms-field-name,
+.hashbar-popup-external-form .wpforms-form .wpforms-field-address {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  min-width: 0 !important;
+}
+
+.hashbar-popup-external-form .wpforms-form fieldset legend,
+.hashbar-popup-external-form .wpforms-form .wpforms-field-name legend,
+.hashbar-popup-external-form .wpforms-form .wpforms-field-label {
+  padding: 0 !important;
+  margin: 0 0 6px 0 !important;
+  font-weight: 500;
+  color: inherit;
+  font-size: 14px;
+  display: block;
+  width: 100%;
+  float: none !important;
+}
+
+/* WPForms Name Field Layout */
+.hashbar-popup-external-form .wpforms-form .wpforms-field-name .wpforms-field-row {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 !important;
+}
+
+.hashbar-popup-external-form .wpforms-form .wpforms-field-name .wpforms-field-row-block,
+.hashbar-popup-external-form .wpforms-form .wpforms-field-row-block {
+  flex: 1;
+  min-width: 100px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hashbar-popup-external-form .wpforms-form .wpforms-field-sublabel {
+  font-size: 12px;
+  color: #888;
+  margin-top: 3px;
+}
+
+/* WPForms Confirmation/Error Messages */
+.hashbar-popup-external-form .wpforms-confirmation-container-full {
+  padding: 15px;
+  background: #d4edda;
+  color: #155724;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.hashbar-popup-external-form .wpforms-error {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* Contact Form 7 Styles inside Popup */
+.hashbar-popup-external-form .wpcf7-form {
+  width: 100%;
+}
+
+.hashbar-popup-external-form .wpcf7-form p {
+  margin-bottom: 15px;
+}
+
+.hashbar-popup-external-form .wpcf7-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.hashbar-popup-external-form .wpcf7-form input[type="text"],
+.hashbar-popup-external-form .wpcf7-form input[type="email"],
+.hashbar-popup-external-form .wpcf7-form input[type="tel"],
+.hashbar-popup-external-form .wpcf7-form input[type="url"],
+.hashbar-popup-external-form .wpcf7-form textarea,
+.hashbar-popup-external-form .wpcf7-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #fff;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.hashbar-popup-external-form .wpcf7-form input:focus,
+.hashbar-popup-external-form .wpcf7-form textarea:focus {
+  outline: none;
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
+}
+
+.hashbar-popup-external-form .wpcf7-form input[type="submit"] {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #4a90d9 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 10;
+  width: auto;
+  min-width: 120px;
+}
+
+.hashbar-popup-external-form .wpcf7-form input[type="submit"]:hover {
+  background: #3a7bc8 !important;
+}
+
+/* CF7 form wrapper fix */
+.hashbar-popup-external-form .wpcf7 {
+  pointer-events: auto;
+}
+
+.hashbar-popup-external-form .wpcf7-form {
+  pointer-events: auto;
+}
+
+.hashbar-popup-external-form .wpcf7-form p {
+  pointer-events: auto;
+}
+
+.hashbar-popup-external-form .wpcf7-response-output {
+  margin: 15px 0 0;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.hashbar-popup-external-form .wpcf7-mail-sent-ok {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* ==========================================================================
+   CTA & Secondary Buttons
+   ========================================================================== */
+.hashbar-popup-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.hashbar-popup-cta {
+  display: var(--btn-display, inline-block);
+  width: var(--btn-width, auto);
+  padding: 12px 20px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--btn-bg-color, #1890ff);
+  color: var(--btn-text-color, #ffffff);
+  border-radius: var(--btn-border-radius, 6px);
+  font-size: var(--btn-font-size, 16px);
+}
+
+.hashbar-popup-cta:hover {
+  background-color: var(--btn-hover-bg-color, #40a9ff) !important;
+  color: var(--btn-hover-text-color, #ffffff) !important;
+  text-decoration: none;
+}
+
+.hashbar-popup-secondary {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid currentColor;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  text-align: center;
+  border-radius: var(--btn-border-radius, 6px);
+  font-size: calc(var(--btn-font-size, 16px) - 2px);
+  opacity: 0.8;
+  color: inherit;
+}
+
+.hashbar-popup-secondary:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   External Content
+   ========================================================================== */
+.hashbar-popup-external-content {
+  width: 100%;
+}
+
+.hashbar-popup-external-content iframe {
+  max-width: 100%;
+  border: none;
+}
+
+/* ==========================================================================
+   Animations - Entry
+   ========================================================================== */
+@keyframes hashbar-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes hashbar-zoomIn {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes hashbar-slideInDown {
+  from { opacity: 0; transform: translate(-50%, calc(-50% - 30px)); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+@keyframes hashbar-slideInUp {
+  from { opacity: 0; transform: translate(-50%, calc(-50% + 30px)); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+@keyframes hashbar-bounceIn {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.3); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
+  70% { transform: translate(-50%, -50%) scale(0.9); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes hashbar-slideInLeft {
+  from { opacity: 0; transform: translate(calc(-50% - 30px), -50%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+@keyframes hashbar-slideInRight {
+  from { opacity: 0; transform: translate(calc(-50% + 30px), -50%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+@keyframes hashbar-flipIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) perspective(400px) rotateY(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) perspective(400px) rotateY(0deg);
+  }
+}
+
+/* Entry Animations for Center */
+.hashbar-popup-center.hashbar-popup-anim-fadeIn.hashbar-popup-visible {
+  animation: hashbar-fadeIn var(--hashbar-popup-duration, 300ms) ease-out forwards;
+}
+
+.hashbar-popup-center.hashbar-popup-anim-zoomIn.hashbar-popup-visible {
+  animation: hashbar-zoomIn var(--hashbar-popup-duration, 300ms) ease-out forwards;
+}
+
+.hashbar-popup-center.hashbar-popup-anim-slideInDown.hashbar-popup-visible {
+  animation: hashbar-slideInDown var(--hashbar-popup-duration, 300ms) ease-out forwards;
+}
+
+.hashbar-popup-center.hashbar-popup-anim-slideInUp.hashbar-popup-visible {
+  animation: hashbar-slideInUp var(--hashbar-popup-duration, 300ms) ease-out forwards;
+}
+
+.hashbar-popup-center.hashbar-popup-anim-bounceIn.hashbar-popup-visible {
+  animation: hashbar-bounceIn var(--hashbar-popup-duration, 300ms) ease-out forwards;
+}
+
+.hashbar-popup-center.hashbar-popup-anim-slideInLeft.hashbar-popup-visible {
+  animation: hashbar-slideInLeft var(--hashbar-popup-duration, 300ms) ease-out forwards;
+}
+
+.hashbar-popup-center.hashbar-popup-anim-slideInRight.hashbar-popup-visible {
+  animation: hashbar-slideInRight var(--hashbar-popup-duration, 300ms) ease-out forwards;
+}
+
+.hashbar-popup-center.hashbar-popup-anim-flipIn.hashbar-popup-visible {
+  animation: hashbar-flipIn var(--hashbar-popup-duration, 300ms) ease-out forwards;
+}
+
+/* ==========================================================================
+   Animations - Exit
+   ========================================================================== */
+@keyframes hashbar-fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes hashbar-zoomOut {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  to { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+}
+
+@keyframes hashbar-slideOutUp {
+  from { opacity: 1; transform: translate(-50%, -50%); }
+  to { opacity: 0; transform: translate(-50%, calc(-50% - 30px)); }
+}
+
+@keyframes hashbar-slideOutDown {
+  from { opacity: 1; transform: translate(-50%, -50%); }
+  to { opacity: 0; transform: translate(-50%, calc(-50% + 30px)); }
+}
+
+@keyframes hashbar-slideOutLeft {
+  from { opacity: 1; transform: translate(-50%, -50%); }
+  to { opacity: 0; transform: translate(calc(-50% - 30px), -50%); }
+}
+
+@keyframes hashbar-slideOutRight {
+  from { opacity: 1; transform: translate(-50%, -50%); }
+  to { opacity: 0; transform: translate(calc(-50% + 30px), -50%); }
+}
+
+@keyframes hashbar-bounceOut {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  25% { transform: translate(-50%, -50%) scale(1.1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.3); }
+}
+
+/* Exit Animations for Center */
+.hashbar-popup-center.hashbar-popup-anim-fadeOut {
+  animation: hashbar-fadeOut var(--hashbar-popup-duration, 300ms) ease-in forwards;
+}
+
+.hashbar-popup-center.hashbar-popup-anim-zoomOut {
+  animation: hashbar-zoomOut var(--hashbar-popup-duration, 300ms) ease-in forwards;
+}
+
+.hashbar-popup-center.hashbar-popup-anim-slideOutUp {
+  animation: hashbar-slideOutUp var(--hashbar-popup-duration, 300ms) ease-in forwards;
+}
+
+.hashbar-popup-center.hashbar-popup-anim-slideOutDown {
+  animation: hashbar-slideOutDown var(--hashbar-popup-duration, 300ms) ease-in forwards;
+}
+
+.hashbar-popup-center.hashbar-popup-anim-slideOutLeft {
+  animation: hashbar-slideOutLeft var(--hashbar-popup-duration, 300ms) ease-in forwards;
+}
+
+.hashbar-popup-center.hashbar-popup-anim-slideOutRight {
+  animation: hashbar-slideOutRight var(--hashbar-popup-duration, 300ms) ease-in forwards;
+}
+
+.hashbar-popup-center.hashbar-popup-anim-bounceOut {
+  animation: hashbar-bounceOut var(--hashbar-popup-duration, 300ms) ease-in forwards;
+}
+
+/* ==========================================================================
+   Utility: Loading Spinner
+   ========================================================================== */
+@keyframes hashbar-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hashbar-popup-loading::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: hashbar-spin 0.8s linear infinite;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hashbar-popup-campaign.hashbar-popup-center {
+    width: calc(100% - 32px);
+    max-width: 100%;
+  }
+
+  .hashbar-popup-campaign.hashbar-popup-center .hashbar-popup-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Side panels become bottom sheets on mobile */
+  .hashbar-popup-campaign.hashbar-popup-side-left,
+  .hashbar-popup-campaign.hashbar-popup-side-right {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    max-height: 80vh;
+    transform: translateY(100%);
+  }
+
+  .hashbar-popup-campaign.hashbar-popup-side-left.hashbar-popup-visible,
+  .hashbar-popup-campaign.hashbar-popup-side-right.hashbar-popup-visible {
+    transform: translateY(0);
+  }
+
+  .hashbar-popup-campaign.hashbar-popup-side-left .hashbar-popup-container,
+  .hashbar-popup-campaign.hashbar-popup-side-right .hashbar-popup-container {
+    border-radius: 16px 16px 0 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Bottom popups */
+  .hashbar-popup-campaign.hashbar-popup-bottom-right,
+  .hashbar-popup-campaign.hashbar-popup-bottom-left,
+  .hashbar-popup-campaign.hashbar-popup-floating {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    width: auto;
+  }
+
+  .hashbar-popup-campaign.hashbar-popup-bottom-right .hashbar-popup-container,
+  .hashbar-popup-campaign.hashbar-popup-bottom-left .hashbar-popup-container,
+  .hashbar-popup-campaign.hashbar-popup-floating .hashbar-popup-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Smaller countdown */
+  .hashbar-popup-countdown-number {
+    padding: 8px 10px;
+    min-width: 45px;
+    font-size: 18px;
+  }
+
+  .hashbar-popup-countdown-label {
+    font-size: 9px;
+  }
+
+  /* Stack split image layouts vertically on mobile */
+  .hashbar-popup-split {
+    flex-direction: column;
+  }
+
+  .hashbar-popup-split .hashbar-popup-image--left,
+  .hashbar-popup-split .hashbar-popup-image--right {
+    width: 100% !important;
+    max-height: var(--popup-image-width, 250px);
+    overflow: hidden;
+  }
+
+  .hashbar-popup-split .hashbar-popup-body {
+    width: 100%;
+  }
+
+  /* Right image moves to top when stacked */
+  .hashbar-popup-split .hashbar-popup-image--right {
+    order: -1;
+  }
+
+  /* Coupon box wrapping */
+  .hashbar-popup-coupon-code {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Scale down all popup text proportionally (85% of user-set values) */
+  .hashbar-popup-heading {
+    font-size: calc(var(--heading-size, 28px) * 0.85) !important;
+  }
+
+  .hashbar-popup-subheading {
+    font-size: calc(var(--subheading-size, 16px) * 0.85) !important;
+  }
+
+  .hashbar-popup-description {
+    font-size: calc(var(--text-size, 14px) * 0.85) !important;
+  }
+
+  .hashbar-popup-container {
+    padding: 20px 16px;
+  }
+
+  .hashbar-popup-countdown-number {
+    padding: 6px 8px;
+    min-width: 40px;
+  }
+
+  .hashbar-popup-coupon-code {
+    padding: 10px 14px;
+  }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .hashbar-popup-campaign,
+  .hashbar-popup-overlay,
+  .hashbar-popup-container,
+  .hashbar-popup-close,
+  .hashbar-popup-cta,
+  .hashbar-popup-submit {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .hashbar-popup-container {
+    border: 2px solid #000000 !important;
+  }
+
+  .hashbar-popup-close {
+    background: #000000 !important;
+    color: #ffffff !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .hashbar-popup-campaign,
+  .hashbar-popup-overlay {
+    display: none !important;
+  }
+}
+
+/* Screen Reader Only */
+.hashbar-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Custom HTML Content */
+.hashbar-popup-external-content {
+  width: 100%;
+  font-size: inherit;
+  line-height: 1.6;
+  color: inherit;
+}
+
+.hashbar-popup-external-content p {
+  margin: 0 0 12px;
+}
+
+.hashbar-popup-external-content p:last-child {
+  margin-bottom: 0;
+}
+
+.hashbar-popup-external-content h1,
+.hashbar-popup-external-content h2,
+.hashbar-popup-external-content h3,
+.hashbar-popup-external-content h4,
+.hashbar-popup-external-content h5,
+.hashbar-popup-external-content h6 {
+  margin: 0 0 12px;
+  line-height: 1.3;
+  color: inherit;
+}
+
+.hashbar-popup-external-content ul,
+.hashbar-popup-external-content ol {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+
+.hashbar-popup-external-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.hashbar-popup-external-content a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.hashbar-popup-external-content blockquote {
+  margin: 0 0 12px;
+  padding: 10px 15px;
+  border-left: 3px solid currentColor;
+  opacity: 0.8;
+}
+
+.hashbar-popup-external-content iframe,
+.hashbar-popup-external-content video {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.hashbar-popup-external-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 12px;
+}
+
+.hashbar-popup-external-content table th,
+.hashbar-popup-external-content table td {
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: left;
+}

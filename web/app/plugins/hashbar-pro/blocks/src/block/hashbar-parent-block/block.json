@@ -1,0 +1,9 @@
+{
+	"textAlignment": {
+		"type": "string"
+	},
+	"inlineAlignment":{
+		"type":"boolean",
+		"default":true
+	}
+}

@@ -1,0 +1,553 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+ .btn-appear-wrap .components-form-toggle {
+    float: right;
+}
+
+.btn-margin-set .components-base-control__field{
+	margin-right: 5px;
+}
+.inline-alignment .block-editor-block-list__layout{
+    display: flex;
+}
+
+.has-text-align-center.inline-alignment .block-editor-block-list__layout{
+    justify-content: center;
+}
+
+.has-text-align-left.inline-alignment .block-editor-block-list__layout{
+    justify-content: flex-start;
+}
+
+.has-text-align-right.inline-alignment .block-editor-block-list__layout{
+    justify-content: flex-end;
+}
+
+a.ht_btn{
+    height: 45px;
+    background: #fdd835;
+	color: #000;
+	padding: 4px 10px;
+	border-radius: 3px;
+	text-decoration: none;
+  max-height: fit-content;
+}
+
+.hashbar-pro-wraper{
+    padding: 10px;
+    margin: 15px;
+    border: 1px solid #e3e3e3;
+}
+
+div[data-title="Hashbar Blocks"]{
+    overflow:hidden;
+}
+
+.hashbar-pro-wraper {
+	border: 1px solid #e3e3e3;
+	padding: 40px;
+}
+
+.hashbar-pro-wraper .block-editor-block-list__layout div{
+	margin: 0px;
+	padding: 0px;
+}
+.hashbar-social-icon a {
+    margin-right: 5px;
+}
+
+.hashbar-social-icon a i {
+    display: inline-block;
+    background: #ff5733;
+    color: #fff;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in 0s;
+    text-align: center;
+    font-style: unset;
+}
+.hash-icon-wraper {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hash-icon-wraper:last-child {
+  margin-bottom: 0;
+}
+.hash-icon-wraper input.components-checkbox-control__input:focus {
+  box-shadow: none;
+  outline: none;
+}
+.hash-icon-wraper > div {
+	margin-bottom: 0px !important;
+}
+
+.image-ctr {
+    display: inline-block;
+    position: relative;
+    padding-top : 15px;
+}
+.btn-remove {
+    position: absolute;
+    top: -19px;
+    right: -6px;
+}
+.option-title{
+    margin-top : 15px !important;
+}
+
+.promo-banner-border-radius .components-base-control__label {
+    margin-right: 20px;
+}
+
+.image-button-wraper{
+    margin-top : 15px;
+}
+
+.ht-promo-banner-image .banner-image-remove{
+    margin-left: 15px !important;
+    color: #f16666 !important;
+}
+.ht-promo-banner-image .banner-image-remove:hover{
+    color: #a70808;
+}
+.panel-item p{
+    background: #e3e3e3;
+    padding: 10px;
+    text-align: center;
+}
+.htf-input input {
+    margin-left: 15px;
+}
+
+.image-button-wraper .components-button.button-primary.button-large{
+    padding: 0px 12px;
+}
+.promo-banner-border-radius,.promo-banner-witdth{
+    display: inline-block;
+}
+.promo-banner-witdth .components-base-control__label {
+    margin-right: 20px;
+}
+.promo-pixel-unit{
+    width: 30px;
+    height: 30px;
+    background: #e3e3e3;
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    line-height: 28px;
+    color: #1d2327;
+    border-radius: 2px
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+    margin-bottom: 24px;
+}
+
+h2.hashbar-blocks-section-title {
+    margin: 0;
+    padding: 10px 0 10px 10px;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    background-color: #eee;
+}
+
+.wp-block-selector-hashbar-dimensions-control .components-panel__row{
+  align-items: flex-start;
+}
+
+.wp-block-selector-hashbar-dimensions-control .hashbar-dimensions-btn-group button{
+  padding: 1px 2px;
+  height: auto;
+}
+
+.wp-block-selector-hashbar-dimensions-control button.components-button.has-icon {
+  height: 100%;
+  width: auto;
+  padding: 3px;
+  border-radius: 0;
+  border: 1px solid #222;
+}
+
+.wp-block-selector-hashbar-dimensions-control h3{
+  margin: 0 0 5px 0;
+}
+
+.wp-block-selector-hashbar-dimensions-control .components-input-control{
+  align-items: center;
+}
+
+.wp-block-selector-hashbar-dimensions-control .components-input-control__backdrop{
+    border-right: 0 !important;
+    border-radius: 0 !important;
+}
+
+.hashbar-panel-row-height-auto {
+    min-height: inherit;
+}
+
+.components-panel__row.hashbar-device-row {
+  justify-content: start;
+}
+
+.hashbar-device-button button.components-button {
+  padding: 0 !important;
+  min-width: inherit;
+  height: inherit;
+  box-shadow: none !important;
+  border: none !important;
+  color: #222 !important;
+  background-color: transparent !important;
+}
+
+.hashbar-device-button button.components-button span.dashicon {
+  font-size: 13px;
+  width: inherit;
+  height: inherit;
+}
+
+.hashbar-device-button button.components-button.is-primary {
+  color: #007cba !important;
+}
+
+.wp-block-block-hashbar p.hashbar-initial{
+  padding: 16px 10px;
+  background: #eee;
+}
+
+p.hashbar-countdown-date-tip {
+  margin-bottom: 21px;
+}
+
+
+
+/* New Improvement Style */
+.components-panel__body.hashbar-block-panel.is-opened>.components-panel__body-title {
+    background-color: #f0f0f0;
+    margin-bottom: 16px;
+  }
+  .hashbar-block-panel .panel-group:first-child {
+    margin-top: -5px;
+  }
+  .hashbar-block-panel .panel-group:not(:last-child) {
+    margin-bottom: 24px !important;
+  }
+  .hashbar-block-panel .panel-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px !important;
+  }
+  .components-base-control__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .hashbar-block-panel .panel-item.components-panel__row {
+    flex-direction: row;
+    min-height: auto;
+    margin-top: 0;
+  }
+  .hashbar-block-panel .panel-item:last-child {
+    margin-bottom: 0 !important;
+  }
+  .hashbar-block-panel .panel-item.btn-appear-wrap {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .hashbar-block-panel .panel-group-title {
+    margin: 0 -15px;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: 12px 15px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 16px;
+  }
+  
+  /* Pro Notice Style */
+  .hashbar-block-panel .panel-item-pro-notice {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .hashbar-block-panel .panel-item-pro-notice:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 46px;
+    left: 0;
+    background-color: #fff;
+    z-index: 2;
+    opacity: 0.5;
+    bottom: 0;
+  }
+  .hashbar-block-panel .panel-item-pro-notice-link {
+    position: absolute;
+    top: 11px;
+    right: 0;
+    background-color: #ad39ce;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    z-index: 3;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  /* Label */
+  .hashbar-block-panel .panel-item label,
+  .hashbar-block-panel .panel-item > p:not(.components-base-control__help) {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: calc(8px);
+    padding: 0px;
+    margin: 0 !important;
+    text-align: left;
+    background-color: transparent;
+  }
+  
+  /* Fields Style */
+  .hashbar-block-panel .panel-item .components-base-control,
+  .hashbar-block-panel .panel-item .components-text-control__input {
+    margin-bottom: 0 !important;
+  }
+  .hashbar-block-panel .panel-item .components-base-control__field {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .hashbar-block-panel .panel-item .components-text-control__input,
+  .hashbar-block-panel .panel-item .components-select-control__input,
+  .hashbar-block-panel .panel-item .components-input-control__backdrop {
+    border-color: #d5dadf !important;
+  }
+  .hashbar-block-panel .panel-item .components-base-control__help {
+    line-height: 1.5;
+    margin-bottom: 0;
+    background-color: transparent;
+    text-transform: capitalize;
+    padding: 0;
+    text-align: left;
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-style: normal;
+    color: rgb(117, 117, 117);
+  }
+  .hashbar-block-panel .panel-item > p.components-base-control__help {
+    margin-top: -4px;
+  }
+  
+  /* Image Upload Style */
+  .hashbar-block-panel .panel-item .image-ctr {
+    display: flex;
+    padding: 0;
+  }
+  .hashbar-block-panel .panel-item .image-ctr .btn-remove {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+  .hashbar-block-panel .panel-item .image-ctr .btn-remove:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+  }
+  .hashbar-block-panel .panel-item .image-ctr .btn-remove .dashicon {
+    font-size: 16px;
+    width: auto;
+    height: auto;
+  }
+  
+  
+  /* Dimension Style */
+  .hashbar-block-panel .panel-item .btn-margin-set .components-base-control:not(:last-child) {
+    margin-right: -1px;
+  }
+  .hashbar-block-panel .panel-item .btn-margin-set .components-base-control__field {
+    margin: 0;
+  }
+  .hashbar-block-panel .panel-item .btn-margin-set .components-text-control__input {
+    border-color: #d5dadf;
+    padding-right: 3px;
+  }
+  .hashbar-block-panel .panel-item .btn-margin-set .components-text-control__input:focus {
+    box-shadow: none;
+  }
+  
+  .hashbar-dimensions-btn-group {
+    display: flex;
+    gap: 5px;
+  }
+  .hashbar-dimensions-btn-group .components-button {
+    display: flex;
+    padding: 0 2px;
+    height: auto;
+    border: none;
+    box-shadow: none !important;
+    color: #212121;
+    background: transparent;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .hashbar-dimensions-btn-group .components-button.is-primary,
+  .hashbar-dimensions-btn-group .components-button.is-primary:hover,
+  .hashbar-dimensions-btn-group .components-button.is-secondary:hover {
+    color: var(--wp-components-color-accent,var(--wp-admin-theme-color,#3858e9));
+    background-color: transparent;
+  }
+  .hashbar-dimensions-btn-group .components-button.is-primary {
+    text-decoration: underline;
+  }
+  
+  .wp-block-selector-hashbar-dimensions-control .components-input-control__backdrop{
+    border-right: 0 !important;
+    border-radius: 0 !important;
+  }
+  .wp-block-selector-hashbar-dimensions-control .components-button.has-icon {
+    padding: 3px;
+    border: 1px solid #d5dadf;
+    align-self: flex-start;
+    width: 32px;
+    height: 32px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .wp-block-selector-hashbar-dimensions-control .components-button.has-icon.is-primary {
+    border-color: var(--wp-components-color-accent,var(--wp-admin-theme-color,#3858e9));
+  }
+  .wp-block-selector-hashbar-dimensions-control .components-button.has-icon .dashicon {
+    font-size: 16px;
+  }
+  .wp-block-selector-hashbar-dimensions-control .components-button.has-icon:focus,
+  .wp-block-selector-hashbar-dimensions-control .components-button.has-icon:hover {
+    box-shadow: none !important;
+    outline: none;
+  }
+  
+  /* Color Control Style */
+  .hashbar-block-panel .panel-color-control {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hashbar-block-panel .panel-color-control > .components-flex {
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
+  .hashbar-block-panel .panel-color-control .components-color-palette__custom-color-text-wrapper,
+  .hashbar-block-panel .panel-color-control .components-circular-option-picker > *:not(.components-circular-option-picker__custom-clear-wrapper) {
+    display: none;
+  }
+  .hashbar-block-panel .panel-color-control .components-color-palette__custom-color-button {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+  }
+  .hashbar-block-panel .panel-color-control .components-color-palette__custom-color-button:focus {
+    box-shadow: inset 0 0 0 1px #0003;
+    outline: none;
+  }
+  .hashbar-block-panel .panel-color-control .components-color-palette__custom-color-button::after {
+    background-position: 0 0, 12px 12px;
+    background-size: 8px 8px;
+    border-radius: 50%;
+  }
+  .hashbar-block-panel .panel-color-control .components-circular-option-picker {
+    width: auto;
+    min-width: auto;
+  }
+  .hashbar-block-panel .panel-color-control .components-circular-option-picker__custom-clear-wrapper {
+    margin: 0;
+  }
+  .hashbar-block-panel .panel-color-control .components-circular-option-picker__clear {
+    text-indent: -9999px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+  }
+  .hashbar-block-panel .panel-color-control .components-circular-option-picker__clear:focus {
+    box-shadow: none;
+    outline: none;
+  }
+  .hashbar-block-panel .panel-color-control .components-circular-option-picker__clear:hover {
+    background-color: transparent;
+  }
+  .hashbar-block-panel .panel-color-control .components-circular-option-picker__clear::before {
+    text-indent: 0px;
+    content: "\f171";
+    font-family: dashicons;
+  }
+  
+  
+  /* Date Picker Style */
+  .hashbar-block-panel .panel-item .MuiInputBase-root {
+    padding-right: 0;
+  }
+  .hashbar-block-panel .panel-item .MuiInputBase-input {
+    padding: 0px 8px;
+    font-size: 14px;
+    line-height: 1;
+    height: 32px;
+  }
+  .hashbar-block-panel .panel-item .MuiInputBase-input::placeholder {
+    text-transform: uppercase;
+  }
+  .hashbar-block-panel .panel-item .MuiInputBase-input,
+  .hashbar-block-panel .panel-item .MuiInputBase-input:focus {
+    border: none;
+    box-shadow: none;
+  }
+  .hashbar-block-panel .panel-item .MuiIconButton-root {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+  }
+  .hashbar-block-panel .panel-item .MuiIconButton-root svg {
+    width: 18px;
+    height: 18px;
+  }
+  .hashbar-block-panel .panel-item .MuiOutlinedInput-notchedOutline {
+    border-color: #d5dadf;
+    box-shadow: none;
+    border-radius: 2px;
+  }
+  .hashbar-block-panel .panel-item .MuiInputBase-root:not(.Mui-error):hover .MuiOutlinedInput-notchedOutline,
+  .hashbar-block-panel .panel-item .Mui-focused:not(.Mui-error) .MuiOutlinedInput-notchedOutline {
+    border-color: #d5dadf;
+  }
+  .hashbar-block-panel .panel-item .Mui-focused .MuiOutlinedInput-notchedOutline {
+    box-shadow: none;
+    border-width: 1px;
+  }

@@ -1,0 +1,49 @@
+/*
+Theme Name: Hello Elementor Child
+Theme URI: https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash
+Template: hello-elementor
+Author: Elementor Team
+Author URI: https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash
+Description: Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
+Tags: accessibility-ready,flexible-header,custom-colors,custom-menu,custom-logo,featured-images,rtl-language-support,threaded-comments,translation-ready
+Version: 3.4.4.1753436858
+Updated: 2025-07-25 11:47:38
+
+*/
+
+body.page-id-213 .u-column1.col-1, body.page-id-211 .u-column2.col-2 { display: none; }
+
+.green-round {
+	background: #EFFFDE;
+    position: absolute!important;
+	left: 50%;
+	transform: translateX(-50%);
+    min-width: 2200px!important;
+    height: 440px!important;
+    border-bottom-left-radius: 50%!important;
+    border-bottom-right-radius: 50%!important;
+}
+.subtitle {
+	text-transform: uppercase;
+	height: 32px;
+	letter-spacing: 6px;
+}
+
+.e-n-accordion-item-title {
+	justify-content: space-between!important;
+	border-bottom: 1px solid #C9DFBA!important;
+}
+
+/* Form Plugin */
+.contact-form {
+	background: white;
+    padding: 48px;
+    border-radius: 32px;
+    border: 1px solid #D0D0D0;
+}
+div.wpforms-container-full button[type=submit] {
+	background-color: #95C11F!important;
+	width: 100%;
+	height: 56px;
+    border-radius: 32px;
+}

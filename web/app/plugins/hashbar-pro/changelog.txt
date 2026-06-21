@@ -1,0 +1,148 @@
+== Changelog ==
+
+= Version: 1.7.5 - Date: 06 May 2026 =
+* Fixed: Announcement Bar page targeting ("Specific pages/posts" and "All except") on the frontend.
+* Fixed: Announcement Bar fixed-date countdown closing too soon in the last minute (frontend + Live Preview).
+* Fixed: Notification Bar accessibility (region, keyboard, close markup).
+* Fixed: Announcement message keeps Design typography when themes style paragraphs or links.
+* Improved: Frontend accessibility for Announcement Bars and Popup Campaigns (landmarks, dialog labeling, focus).
+
+= Version: 1.7.4 - Date: 07 Apr 2026 =
+* Added: Reopen Button Styling section in Design tab with color, font, and border radius controls.
+* Improved: Smooth height transition when Announcement Bar opens and closes (no more content jumping).
+* Improved: Cookie duration changes now take effect immediately without needing to clear browser cookies.
+* Fixed: Reopen button not appearing when "Show on each page reload" cookie option is selected.
+
+= Version: 1.7.3 - Date: 09 Mar 2026 =
+* Fixed: Admin settings page timeout on WooCommerce sites with large product catalogs.
+* Improved: Posts, Pages, and Products list limits now properly connected to Settings.
+* Improved: Server-side search support for page/post selection in targeting options.
+* Improved: Eliminated duplicate database queries on admin settings page load.
+
+= Version: 1.7.2 - Date: 25 Feb 2026 =
+* Added: Content element drag-and-drop ordering in Design tab for Popup Campaigns.
+* Added: Image Width control with px/% unit toggle for Popup Campaigns.
+* Added: Image Alignment option based on image position for Popup Campaigns.
+* Added: Image Border Radius control with individual corner inputs for Popup Campaigns.
+* Added: Flash Sale, Cyber Monday, and Split E-commerce templates for Popup Campaigns.
+* Added: Content Wrapper Styles section for Popup Campaigns.
+* Improved: Popup Campaign editor tabs now use responsive overflow menu instead of horizontal scroll.
+* Improved: Collapsible sections in Popup Campaign Design tab for better navigation.
+* Improved: Announcement Bar editor header restyled with inline title input.
+* Fixed: Cookie interfering with server-side caching.
+* Fixed: User Targeting "Show To" option not working for Popup Campaigns (Guests Only setting was ignored).
+* Fixed: HTML rendering in heading, subheading, and description fields for Popup Campaigns.
+* Fixed: CTA Button Styling section not showing intermittently in Announcement Bar Design tab.
+* Fixed: Publish/Update button text now correctly shows "Update" when editing existing items.
+
+
+
+= Version: 1.7.1 - Date: 08 Feb 2026 =
+* Added: Delay After Click option for On Element Click popup trigger.
+* Improved: 2-column layout for Exit Intent and On Element Click trigger settings.
+* Fixed: Close Button Reopen issue in Notification bar.
+
+= Version: 1.7.0 - Date: 28 Jan 2026 =
+* Added: Popup Campaign with templates, 8 campaign types, 7 positions, and 8 smart triggers.
+* Added: Form Builder with 11 field types and Mailchimp integration.
+* Added: Popup Countdown Timer, Coupon Display, and Smooth Animations.
+* Added: Popup Analytics Dashboard and A/B Testing.
+* Added: Default CTA button text and sticky live preview in Announcement Bar Editor.
+* Improved: Page targeting and typography sections in Announcement Bar Editor.
+* Improved: Timezone select option with Site and visitor Timezone in Announcement Bar.
+
+= Version: 1.6.0 --Date: 06 Jan 2026 =
+* Added: Modern Announcement Bar with Templates, Countdown timer, Targeting, Position, Animation, and Scheduling options.
+* Added: Announcement Bar Analytics for tracking impressions, clicks, and CTR.
+* Added: Coupon code display with copy functionality for Announcement Bars.
+* Improved: UI/UX for a better user experience.
+
+= Version: 1.5.1 --Date: 22 Sep 2025 =
+* Fixed: Schedule Notification Display issue.
+* Fixed: Draft Notification Switcher Enable/Disable issue.
+* Fixed: A few minor issues.
+
+= Version: 1.5.0 --Date: 07 Aug 2025 =
+* Improved: UI/UX for a better user experience
+* Fixed: A few minor issues.
+
+= Version: 1.4.7 --Date: 23 Mar 2025 =
+* Improved: License manager functionality for better experience.
+
+= Version: 1.4.6 --Date: 05 Feb 2025 =
+* Added: Option to enable/disable sticky notification bar on top.
+* Fixed: Issue with notification bar not showing in private pages. 
+
+= Version: 1.4.5 --Date: 24 Dec 2024 =
+* Added: Typography options for "Hashbar Notification" block.
+
+= Version: 1.4.4 --Date: 25 Nov 2024 =
+* Enhanced: UI/UX for a better user experience
+* Fixed: Issue with social icon block icons list.
+* Fixed: Translation notice issue with WordPress 6.7.1
+
+= Version: 1.4.3 --Date: 28 Aug 2024 =
+* Updated: 3rd party libraries for latest PHP version compatibility.
+
+= Version: 1.4.2 --Date: 31 July 2024 =
+* Fixed: Missing translation issue in plugin options page.
+* Updated: Language translation .pot file.
+
+= Version: 1.4.1 --Date: 03 July 2024 =
+* Added: Option to delay notification display.
+* Updated: Language translation .pot file.
+
+= Version: 1.4.0 --Date: 15 April 2024 =
+* Added: Option to add border on notification content area.
+
+= Version: 1.3.9 --Date: 18 Mar 2024 =
+* Added: Recurring countdown option.
+* Improved: Cookie expire time code Improvement.
+
+= Version: 1.3.8 --Date: 15 Jan 2024 =
+* Fixed: Sticky topbar issue when the header position property is Sticky
+
+= Version: 1.3.7 --Date: 17 Dec 2023 =
+* Tweak: CSS for cross-browser compatibility
+* Tweak: Opt-in message to provide non-sensitive diagnostic data and usage information to improve the plugin
+
+= Version: 1.3.6 --Date: 13 Sep 2023 =
+* Fixed: Showing the notifications on search page issue.
+
+= Version: 1.3.5 --Date: 21 Aug 2023 =
+* Updated: License Manager
+
+= Version: 1.3.4 --Date: 07 May 2023 =
+* Fixed: Wordfence domain URL issue
+* Removed: Plugin update notice
+
+= Version: 1.3.2 --Date: 27 Sep 2022 =
+* Fixed: Codestar directory issue.
+
+= Version: 1.3.2 --Date: 27 Sep 2022 =
+* Fixed: Codestar directory issue.
+
+= Version: 1.2.9 --Date: 6 Nov 2021 =
+* Added: Option to show/hide Notification bar open button
+* Adden: Cross button on license notice to dismiss the notice for users. 
+
+= Version: 1.2.7 --Date: 14 Oct 2021 =
+* Completely Rewrites: Old CSS & the JS codes (Clearing cache after updating to this version is recommended)
+* Improved: Metabox options to make it more user friendly & serve better user experience
+* Improved: A few options names to describe the usages of those options more clearly
+* Added: Analytics feature
+* Added: Option to show/hide notification based on scroll position
+* Added: Option to keep the notification bar closed by using cookie
+* Added: Option to set notification for Specific Posts / Pages / Products (Previously it was available in the PRO version only)
+* Updated: Background image field data type (previously it was “string” from now the field type is “array”)
+
+= Version: 1.2.6 --Date: 14 Aug 2021 =
+* Fixed: Conflict of overlapping notification on the top/bottom bar when promo banner used on same page.
+* Fixed: Promo banner scroll position
+
+= Version: 1.2.4 --Date: 27 Jul 2021 =
+* Added: promo banner and promo banner image block
+* Added: promo banner and promo banner image pattern 
+* Fixed: promo banner image pattern source issue
+* Fixed: exclusion notification bar by page,post,custom post id
+* Fixed: block layout and css issue

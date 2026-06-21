@@ -1,0 +1,25 @@
+{
+	"hashbarParagraph":{
+		"type":"string"
+	},
+	"displayAlign":{
+		"type":"boolean",
+		"default":true
+	},
+	"pconentMarginTop":{
+		"type": "number",
+		"default":0
+	},
+	"pconentMarginRight":{
+		"type":"number",
+		"default":0
+	},
+	"pconentMarginBottom":{
+		"type":"number",
+		"default":0
+	},
+	"pconentMarginLeft":{
+		"type":"number",
+		"default":0
+	}
+}

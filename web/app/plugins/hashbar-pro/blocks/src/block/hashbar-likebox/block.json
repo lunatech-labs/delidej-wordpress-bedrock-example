@@ -1,0 +1,18 @@
+{
+	"pageLink":{
+		"type":"string",
+		"default":""
+	},
+	"pageLinkEdit":{
+		"type":"boolean",
+		"default":true
+	},
+	"appId":{
+		"type":"string",
+		"default":""
+	},
+	"likeboxWidth":{
+		"type":"number",
+		"default":""
+	}
+}
