@@ -39,7 +39,7 @@
     "wpackagist-plugin/woocommerce": "10.8.1",
     "wpackagist-plugin/woocommerce-pdf-invoices-packing-slips": "5.14.0",
     "wpackagist-plugin/wp-mail-smtp": "4.8.0",
-    "wpackagist-theme/hello-elementor": "*",
+    "wpackagist-theme/hello-elementor": "^3.4",
     "wpackagist-plugin/insert-headers-and-footers": "2.3.6",
     "wpackagist-plugin/when-last-login": "1.2.3",
     "wpackagist-plugin/woo-thank-you-page-customizer": "1.2.0" 
