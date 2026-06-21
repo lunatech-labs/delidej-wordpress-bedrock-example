@@ -30,18 +30,18 @@
     "wpackagist-plugin/fluent-crm": "3.1.5",
     "wpackagist-plugin/fluent-support": "2.2.1",
     "wpackagist-plugin/google-site-kit": "1.181.0",
+    "wpackagist-plugin/insert-headers-and-footers": "2.3.6",
     "wpackagist-plugin/mollie-payments-for-woocommerce": "8.1.7",
     "wpackagist-plugin/simple-cloudflare-turnstile": "1.40.0",
     "wpackagist-plugin/simple-page-ordering": "2.8.0",
     "wpackagist-plugin/translatepress-multilingual": "3.2.2",
     "wpackagist-plugin/ultimate-faqs": "2.4.11",
     "wpackagist-plugin/ultimate-member": "2.12.0",
+    "wpackagist-plugin/woo-thank-you-page-customizer": "^1.2",
     "wpackagist-plugin/woocommerce": "10.8.1",
     "wpackagist-plugin/woocommerce-pdf-invoices-packing-slips": "5.14.0",
     "wpackagist-plugin/wp-mail-smtp": "4.8.0",
-    "wpackagist-theme/hello-elementor": "^3.4",
-    "wpackagist-plugin/insert-headers-and-footers": "2.3.6",
-    "wpackagist-plugin/woo-thank-you-page-customizer": "^1.2"
+    "wpackagist-theme/hello-elementor": "^3.4"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.4.2",
@@ -59,6 +59,11 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
     "wordpress-install-dir": "web/wp"
   },
   "scripts": {
