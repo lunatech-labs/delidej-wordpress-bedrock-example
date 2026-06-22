@@ -1,3 +1,5 @@
 .clever.json
 vendor/
 composer.lock
+# garder les vendor internes des plugins Pro
+!web/app/plugins/*/vendor/
